@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+th, td { 
+    text-align: left; 
+    padding: 3px;
+}
+main a {
+    text-decoration: none;
+    color: green;
+    border: 1px solid green;
+    padding: 3px;
+    margin: 3px;
+}
+td a {
+    text-decoration: none;
+    color: green;
+}
+label input {
+    display: block;
+    padding: 3px;
+    margin-bottom: 6px;
+}
+nav {
+    display: block;
+    margin-bottom: 12px;
+}
+nav button {
+    background-color: white;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+nav a {
+    text-decoration: none;
+    font-size: 24px;
+}

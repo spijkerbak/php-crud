@@ -22,7 +22,7 @@ $stmt->execute([$KlantNaam, $VerkNr, $PlaatsHfdkntr, $KlantNr]);
 // - back to list if ok
 // - back to edit on error
 if (sqlCheckSilently($stmt)) {
-    header('location: customer-list.php');
+    start('customer-list.php');
 } else {
-    header("location: customer-edit.php?KlantNr=$KlantNr");
+    start("customer-edit.php?KlantNr=$KlantNr");
 }

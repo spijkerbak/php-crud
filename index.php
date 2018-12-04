@@ -9,8 +9,8 @@
 
     <body>
         <main>
-            <a href="create-tables.php">Reset database</a>
             <a href="customer-list.php">Klanten</a>
+            <a href="create-tables.php">Reset database</a>
         </main>
     </body>
 

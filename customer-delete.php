@@ -11,4 +11,4 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$KlantNr]);
 
 // return to list
-header('location: customer-list.php');
+start('customer-list.php');

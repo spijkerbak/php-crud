@@ -7,5 +7,5 @@ require 'db.php';
 $sql = "INSERT INTO Klant (KlantNaam, VerkNr, PlaatsHfdkntr) VALUES('', NULL, '')";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-header('location: customer-list.php');
+start('customer-list.php');
 

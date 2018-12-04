@@ -1,5 +1,7 @@
-<!DOCTYPE html>
 <?php
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 // connect to database
 require 'db.php';
 
@@ -13,6 +15,7 @@ $stmt->execute([$KlantNr]);
 sqlCheck($stmt);
 $row = $stmt->fetch(PDO::FETCH_OBJ);
 ?>
+<!DOCTYPE html>
 <html lang="nl">
 
     <head>

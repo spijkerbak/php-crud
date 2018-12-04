@@ -1,5 +1,8 @@
-<!DOCTYPE html>
 <?php
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
+
 // connect to database
 require 'db.php';
 
@@ -8,6 +11,7 @@ $sql = "SELECT * FROM Klant ORDER BY KlantNaam";
 $rs = $pdo->query($sql, PDO::FETCH_OBJ);
 sqlCheck($rs);
 ?>
+<!DOCTYPE html>
 <html lang="nl">
 
     <head>
@@ -15,7 +19,7 @@ sqlCheck($rs);
         <title>List</title>
         <link type="text/css" rel="stylesheet" href="layout.css">
     </head>
-
+    
     <body>
 
         <nav>

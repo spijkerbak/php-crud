@@ -11,9 +11,9 @@
 
         <nav>
             <a href="customer-list.php">klanten</a>
-            <a href="create-tables.php?<?= rand(1, 10000) ?>">reset database</a>
+            <a href="create-tables.php?<?= rand() ?>">reset database</a>
         </nav>
-
+        
         <h1>Home</h1>
         <p>CRUD example V2.0</p>
         <p>Get sources on <a target="github" href="http://github.com/spijkerbak/php-crud.git">Github</a>.

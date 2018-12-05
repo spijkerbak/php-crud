@@ -23,8 +23,8 @@ $rs = $pdo->query($sql, PDO::FETCH_OBJ);
 
         <nav>
             <a href=".">home</a>
-            <a href="customer-new.php?<?= rand(1, 10000) ?>" title="add a record">new</a>
-            <a href="create-tables.php?<?= rand(1, 10000) ?>">reset database</a>
+            <a href="customer-new.php?<?= rand() ?>" title="add a record">new</a>
+            <a href="create-tables.php?<?= rand() ?>">reset database</a>
         </nav>
 
         <h1>Klanten</h1>

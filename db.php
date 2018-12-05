@@ -1,7 +1,11 @@
 <?php
-
 // UTF-8 NΟ BOM
-// connection parameters
+
+// disable caching in browsers and proxies 
+// to prevent stale data after refresh or redirect
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 
 // connection parameters to local database could be:
 $dsn = 'mysql:dbname=crud;host=localhost;charset=utf8'; // no hyphen in utf8

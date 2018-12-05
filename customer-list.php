@@ -1,8 +1,6 @@
 <?php
+
 // UTF-8 NΟ BOM 
-header('Cache-Control: no-cache, no-store, must-revalidate');
-header('Pragma: no-cache');
-header('Expires: 0');
 
 require 'db.php';
 
@@ -23,8 +21,8 @@ $rs = $pdo->query($sql, PDO::FETCH_OBJ);
 
         <nav>
             <a href=".">home</a>
-            <a href="customer-new.php?<?= rand() ?>" title="add a record">new</a>
-            <a href="create-tables.php?<?= rand() ?>">reset database</a>
+            <a href="customer-new.php" title="add a record">new</a>
+            <a href="create-tables.php">reset database</a>
         </nav>
 
         <h1>Klanten</h1>

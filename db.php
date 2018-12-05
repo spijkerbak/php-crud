@@ -3,12 +3,12 @@
 // UTF-8 NΟ BOM
 // connection parameters
 
-// local database could be:
+// connection parameters to local database could be:
 $dsn = 'mysql:dbname=crud;host=localhost;charset=utf8'; // no hyphen in utf8
 $user = 'root';
 $pass = '';
 
-// my settyings are secret
+// my connection paramaters are secret
 include 'db-settings.php';
 
 // connect to database

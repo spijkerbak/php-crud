@@ -1,4 +1,6 @@
-<?php // UTF-8 NΟ BOM
+<?php
+
+// UTF-8 NΟ BOM
 
 require 'db.php';
 
@@ -8,7 +10,7 @@ $KlantNaam = $_POST['KlantNaam'];
 $VerkNr = $_POST['VerkNr'];
 $PlaatsHfdkntr = $_POST['PlaatsHfdkntr'];
 
-if($VerkNr == '') {
+if ($VerkNr == '') {
     $VerkNr = null;
 }
 

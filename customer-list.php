@@ -1,4 +1,5 @@
-<?php // UTF-8 NΟ BOM 
+<?php
+// UTF-8 NΟ BOM 
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
@@ -17,12 +18,12 @@ $rs = $pdo->query($sql, PDO::FETCH_OBJ);
         <title>List</title>
         <link type="text/css" rel="stylesheet" href="layout.css">
     </head>
-    
+
     <body>
 
         <nav>
             <a href=".">home</a>
-            <a href="customer-new.php?<?= rand(1,10000) ?>" title="add a record">new</a>
+            <a href="customer-new.php?<?= rand(1, 10000) ?>" title="add a record">new</a>
         </nav>
 
         <h1>Klanten</h1>
@@ -30,20 +31,20 @@ $rs = $pdo->query($sql, PDO::FETCH_OBJ);
         <table>
             <tr>
                 <th>
-                <th>
                 <th>Nummer
                 <th>Naam
                 <th>Verkoper
                 <th>Hoofdkantoor
+                <th>
             </tr>
             <?php while ($row = $rs->fetch()) { ?>
                 <tr>
-                    <td><a title="delete" href="customer-delete.php?KlantNr=<?= $row->KlantNr ?>">X</a>
                     <td><a title="edit" href="customer-edit.php?KlantNr=<?= $row->KlantNr ?>">?</a>
                     <td><?= $row->KlantNr ?>
                     <td><?= $row->KlantNaam ?>
                     <td><?= $row->VerkNr ?>
                     <td><?= $row->PlaatsHfdkntr ?>
+                    <td><a title="delete" href="customer-delete.php?KlantNr=<?= $row->KlantNr ?>">X</a>
                 </tr>
             <?php } ?>
         </table>

@@ -1,9 +1,10 @@
-﻿<?php // UTF-8 NΟ BOM
+﻿<?php
+// UTF-8 NΟ BOM
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
 
-require 'db.php'; 
+require 'db.php';
 
 // get url parameter
 $KlantNr = $_GET['KlantNr'];
@@ -29,7 +30,7 @@ $row = $stmt->fetch(PDO::FETCH_OBJ);
 
         <form method="post" action="customer-save.php">
             <nav>
-                <a href="index.php" title="home">home</a>
+                <a href="." title="home">home</a>
                 <a href="customer-list.php" title="back to list">back</a>
                 <button title="save" type="submit">save</button>
                 <button title="reset" type="reset">reset</button>

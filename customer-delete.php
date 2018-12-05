@@ -1,4 +1,6 @@
-<?php // UTF-8 NΟ BOM
+<?php
+
+// UTF-8 NΟ BOM
 
 require 'db.php';
 

@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body {
+    padding: 5px;
+}
 table, th, td {
     border-collapse: collapse;
     border: 1px solid black;
@@ -17,6 +20,9 @@ main a {
     padding: 3px;
     margin: 3px;
 }
+td > a {
+    background-color: #DDD;
+}
 td a {
     text-decoration: none;
     color: green;
@@ -31,13 +37,11 @@ nav {
     margin-bottom: 12px;
 }
 nav a, nav button {
+    display: inline-block;
     border: 1px solid green;
-    background-color: #8F8;
-    margin: 3px;
+    background-color: #DFD;
     padding: 3px;
     font-size: 10pt;
-}
-nav button {
 }
 nav a {
     text-decoration: none;

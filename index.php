@@ -11,7 +11,7 @@
 
         <nav>
             <a href="customer-list.php">klanten</a>
-            <a href="create-tables.php">reset database</a>
+            <a href="create-tables.php?<?= rand(1, 10000) ?>">reset database</a>
         </nav>
 
         <h1>Home</h1>

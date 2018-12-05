@@ -10,7 +10,7 @@
 
 $dsn = 'mysql:dbname=md136282db448331;host=db.spijkerman.nl;charset=utf8'; // no hyphen in utf8
 $user = 'md136282db448331';
-$pass = 'crud123';
+$pass = 'crud1234';
 
 // connect to database
 try {

@@ -20,12 +20,11 @@ main a {
     padding: 3px;
     margin: 3px;
 }
-td > a {
-    background-color: #DDD;
+td.button {
+    background-color: #DFD;
 }
 td a {
     text-decoration: none;
-    color: green;
 }
 label input {
     display: block;

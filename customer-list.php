@@ -39,12 +39,12 @@ $rs = $pdo->query($sql, PDO::FETCH_OBJ);
             </tr>
             <?php while ($row = $rs->fetch()) { ?>
                 <tr>
-                    <td><a title="edit" href="customer-edit.php?KlantNr=<?= $row->KlantNr ?>">?</a>
+                    <td class="button"><a title="edit" href="customer-edit.php?KlantNr=<?= $row->KlantNr ?>">?</a>
                     <td><?= $row->KlantNr ?>
                     <td><?= $row->KlantNaam ?>
                     <td><?= $row->VerkNr ?>
                     <td><?= $row->PlaatsHfdkntr ?>
-                    <td><a title="delete" href="customer-delete.php?KlantNr=<?= $row->KlantNr ?>">X</a>
+                    <td class="button"><a title="delete" href="customer-delete.php?KlantNr=<?= $row->KlantNr ?>">X</a>
                 </tr>
             <?php } ?>
         </table>

@@ -1,6 +1,5 @@
-<?php
+<?php // UTF-8 NΟ BOM
 
-// connect to database
 require 'db.php';
 
 // get post parameter
@@ -9,20 +8,15 @@ $KlantNaam = $_POST['KlantNaam'];
 $VerkNr = $_POST['VerkNr'];
 $PlaatsHfdkntr = $_POST['PlaatsHfdkntr'];
 
+if($VerkNr == '') {
+    $VerkNr = null;
+}
+
 // update record
-$sql = "UPDATE Klant SET "
-        . "KlantNaam = ?, "
-        . "VerkNr = ?, "
-        . "PlaatsHfdkntr = ? "
-        . "WHERE KlantNr = ?";
+$sql = "UPDATE Klant SET KlantNaam = ?, VerkNr = ?, PlaatsHfdkntr = ? WHERE KlantNr = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$KlantNaam, $VerkNr, $PlaatsHfdkntr, $KlantNr]);
+checkSQL($stmt);
 
-// check result 
-// - back to list if ok
-// - back to edit on error
-if (sqlCheckSilently($stmt)) {
-    start('customer-list.php');
-} else {
-    start("customer-edit.php?KlantNr=$KlantNr");
-}
+// return to list
+header('location: customer-list.php');

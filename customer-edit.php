@@ -1,9 +1,9 @@
-<?php
+﻿<?php // UTF-8 NΟ BOM
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
-// connect to database
-require 'db.php';
+
+require 'db.php'; 
 
 // get url parameter
 $KlantNr = $_GET['KlantNr'];
@@ -12,7 +12,8 @@ $KlantNr = $_GET['KlantNr'];
 $sql = "SELECT * FROM Klant WHERE KlantNr = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$KlantNr]);
-sqlCheck($stmt);
+checkSQL($stmt);
+
 $row = $stmt->fetch(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -28,10 +29,10 @@ $row = $stmt->fetch(PDO::FETCH_OBJ);
 
         <form method="post" action="customer-save.php">
             <nav>
-                <a href="index.php" title="home">🏠</a>
-                <a href="customer-list.php" title="back to list"><b>🡠</b></a>
-                <button title="save" type="submit"><small>💾</small></button>
-                <button title="reset" type="reset"><b>↻</b></button>
+                <a href="index.php" title="home">home</a>
+                <a href="customer-list.php" title="back to list">back</a>
+                <button title="save" type="submit">save</button>
+                <button title="reset" type="reset">reset</button>
             </nav>
 
             <h1>Klant</h1>

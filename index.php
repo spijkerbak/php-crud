@@ -3,15 +3,18 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>List</title>
+        <title>Home</title>
         <link type="text/css" rel="stylesheet" href="layout.css">
     </head>
 
     <body>
-        <main>
-            <a href="customer-list.php">Klanten</a>
-            <a href="create-tables.php">Reset database</a>
-        </main>
+        
+        <nav>
+            <a href="customer-list.php">klanten</a>
+            <a href="create-tables.php">reset database</a>
+        </nav>
+        
+        <h1>Home</h1>
     </body>
 
 </html>

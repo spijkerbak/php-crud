@@ -1,8 +1,14 @@
-<?php
-// connect to database
+<?php // UTF-8 NΟ BOM
+
+// connection parameters
+// $dsn = 'mysql:dbname=crud;host=localhost;charset=utf8'; // no hyphen in utf8
+// $user = 'root';
+// $pass = '';
 $dsn = 'mysql:dbname=md136282db448331;host=db.spijkerman.nl;charset=utf8'; // no hyphen in utf8
 $user = 'md136282db448331';
-$pass = 'crudcrudcrud';
+$pass = 'crud123';
+
+// connect to database
 try {
     $pdo = new PDO($dsn, $user, $pass);
 } catch (PDOException $e) {
@@ -12,37 +18,11 @@ try {
 // enable error messages
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-// call this after a query that SHOULD NOT go wrong
-function sqlCheck($q) {
-    if ($q === false) {
-        die();
+// function to call after execution of statement
+function checkSQL($stmt) {
+    $info = $stmt->errorInfo();
+    if($info[0] != '00000') {
+        echo $info[2];
+        exit;
     }
-    $info = $q->errorInfo();
-    if ($info[0] != 0) {
-        print_r($info);
-        die();
-    }
-}
-
-// call this after a query that COULD go wrong on user input
-function sqlCheckSilently($q) {
-    if ($q === false) {
-        return false;
-    }
-    $info = $q->errorInfo();
-    if ($info[0] != 0) {
-        return false;
-    }
-    return true;
-}
-
-// redirect to page, add dummy parameter to force reload
-function start($page) {
-    header("location: $page");
-//    if(strpos($page, '?') > 0) {
-//        header("location: $page&" . rand(10000,99999));
-//    } else {
-//        header("location: $page?" . rand(10000,99999));
-//    }
-    exit;
 }

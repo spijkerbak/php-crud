@@ -4,13 +4,12 @@
 // connection parameters
 
 // local database could be:
-// $dsn = 'mysql:dbname=crud;host=localhost;charset=utf8'; // no hyphen in utf8
-// $user = 'root';
-// $pass = '';
+$dsn = 'mysql:dbname=crud;host=localhost;charset=utf8'; // no hyphen in utf8
+$user = 'root';
+$pass = '';
 
-$dsn = 'mysql:dbname=md136282db448331;host=db.spijkerman.nl;charset=utf8'; // no hyphen in utf8
-$user = 'md136282db448331';
-$pass = 'crud1234';
+// my settyings are secret
+include 'db-settings.php';
 
 // connect to database
 try {

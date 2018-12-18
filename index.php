@@ -10,8 +10,7 @@
     <body>
 
         <nav>
-            <a href="customer-list.php">klanten</a>
-            <a href="create-tables.php">reset database</a>
+            <?php require 'menu.inc.php'; ?>
         </nav>
         
         <h1>Home</h1>

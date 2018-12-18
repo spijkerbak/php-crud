@@ -13,6 +13,17 @@ $stmt->execute([$KlantNr]);
 checkSQL($stmt);
 
 $row = $stmt->fetch(PDO::FETCH_OBJ);
+
+function generateSelectOption() {
+    global $pdo;
+    $sql = 'SELECT `VerkNr`, `VerkNaam` FROM `Verkoper` ORDER BY `VerkNaam`';
+    $rs = $pdo->query($sql, PDO::FETCH_OBJ);
+    echo "<select name='VerkNr'>\n";
+    while ($row = $rs->fetch()) { 
+        echo "<option value='{$row->VerkNr}'>{$row->VerkNaam}</option>\n";
+    }
+    echo '</select>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -47,7 +58,7 @@ $row = $stmt->fetch(PDO::FETCH_OBJ);
 
             <label>
                 Verkoper
-                <input type="text" name="VerkNr" value="<?= $row->VerkNr ?>">
+                <?php generateSelectOption(); ?>
             </label>
 
             <label>

@@ -26,10 +26,11 @@ td.button {
 td a {
     text-decoration: none;
 }
-label input {
+label input, label select {
     display: block;
     padding: 3px;
     margin-bottom: 6px;
+    width: 220px;
 }
 nav {
     display: block;

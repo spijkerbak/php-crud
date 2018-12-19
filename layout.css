@@ -36,7 +36,7 @@ nav {
     display: block;
     margin-bottom: 12px;
 }
-nav a, nav button {
+nav a, button, input[type=submit] {
     display: inline-block;
     border: 1px solid green;
     background-color: #DFD;

@@ -1,6 +1,4 @@
 <?php
-// UTF-8 NΟ BOM
-session_start();
 require 'db.php';
 
 // get url parameter
@@ -13,8 +11,4 @@ $stmt->execute([$KlantNr]);
 checkSQL($stmt);
 
 // return to list
-if(isset($_SESSION['list'])) {
-    header('location: ' . $_SESSION['list']);   
-} else {
-    header('location: .');
-}
+header('location: customer-list.php');

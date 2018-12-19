@@ -1,6 +1,4 @@
 ﻿<?php
-// UTF-8 NΟ BOM
-session_start();
 require 'db.php';
 
 // get url parameter
@@ -19,7 +17,7 @@ function generateSelectOption() {
     $sql = 'SELECT `VerkNr`, `VerkNaam` FROM `Verkoper` ORDER BY `VerkNaam`';
     $rs = $pdo->query($sql, PDO::FETCH_OBJ);
     echo "<select name='VerkNr'>\n";
-    while ($row = $rs->fetch()) { 
+    while ($row = $rs->fetch()) {
         echo "<option value='{$row->VerkNr}'>{$row->VerkNaam}</option>\n";
     }
     echo '</select>';
@@ -37,12 +35,14 @@ function generateSelectOption() {
     <body>
 
         <form method="post" action="customer-save.php">
+
             <nav>
                 <a href="." title="home">home</a>
                 <a href="customer-list.php" title="back to list">back</a>
                 <button title="save" type="submit">save</button>
                 <button title="reset" type="reset">reset</button>
             </nav>
+
 
             <h1>Klant</h1>
 

@@ -6,6 +6,12 @@ DROP TABLE IF EXISTS `Klant`;
 DROP TABLE IF EXISTS `Product`;
 DROP TABLE IF EXISTS `Verkoper`; 
 DROP TABLE IF EXISTS `Kamer`;
+DROP TABLE IF EXISTS `User`;
+
+CREATE TABLE `User` (
+        `Username` varchar(40) PRIMARY KEY,
+        `PasswordHash` varchar(256)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
 CREATE TABLE `Product` (
 	`ProdNr` int,
@@ -56,6 +62,9 @@ CREATE TABLE `Klant` (
 		ON UPDATE CASCADE
 		ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+INSERT INTO `User` VALUES 
+('Frans', '9c4c4c4db14b6e60a0449a44b8f7dfa0'); -- result of password_hash('geheim' . 'Frans');
 
 INSERT INTO `Kamer` VALUES 
 ('101', '', '100'),

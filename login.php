@@ -1,22 +1,28 @@
 <!doctype html>
 <html lang="nl">
     <head>
-        <title>Template</title>
+        <title>Login</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" rel="stylesheet" href="style.css">
-        <style>
-            * { box-sizing: border-box; }
-        </style>
+        <link type="text/css" rel="stylesheet" href="layout.css">
     </head>
     <body>
+
         <form method="post" action="login_check.php">
-            <input type="text" name="username">
-            <br>
-            <input type="password" name="password">
-            <br>
-            <input type="submit" value="Login">
+            <nav>
+                <a href="." title="home">home</a>
+                <a href="customer-list.php" title="back to list">back</a>
+            </nav>
+            <label>
+                Gebruikersnaam
+                <input type="text" name="username">
+            </label>
+
+            <label>
+                Wachtwoord
+                <input type="password" name="password">
+            </label>
+            <input type="submit" value="login">
         </form>
-        
+
     </body>
 </html>

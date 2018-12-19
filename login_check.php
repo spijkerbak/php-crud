@@ -1,17 +1,19 @@
 <?php
+require 'db.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
-
-$sql = "SELECT * FROM `user` WHERE `username` = ? AND `password` = ?";
+$passwordhash = md5($password . $username);
+$sql = "SELECT * FROM `User` WHERE `Username` = ? AND `PasswordHash` = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$username, $password]);
+$stmt->execute([$username, $passwordhash]);
 checkSQL($stmt);
-
-$row = $stmt->fetch(PDO::FETCH_OBJ);
-if($row === FALSE) {
-    echo "Helaas";
+$user = $stmt->fetch(PDO::FETCH_OBJ);
+if($user === FALSE) {
+    unset($_SESSION['username']);
+    header('location: login.php');
 } else {
-    echo "Ja!";
+    $_SESSION['username'] = $username;
+    header('location: .');
 }
 
    

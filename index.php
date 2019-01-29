@@ -19,7 +19,7 @@ session_start();
         <h1>Home</h1>
         <p>CRUD example V2.1</p>
         <p>Get sources on <a target="github" href="http://github.com/spijkerbak/php-crud.git">Github</a>.
-            
+        <p><a href="../crud-simple/">Another example available</a></p>
         <p><?= $_SESSION['username'] ?></p>
     </body>
 

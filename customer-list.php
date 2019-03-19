@@ -20,7 +20,6 @@ $rs = $pdo->query($sql, PDO::FETCH_OBJ);
 
         <nav>
             <?php require 'menu.inc.php'; ?>
-            <a href = "customer-new.php?page=customer-list-2.php" title="add a record">new</a>
         </nav>
 
         <h1>Klanten</h1>

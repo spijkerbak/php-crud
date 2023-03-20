@@ -2,26 +2,16 @@
 require 'db.php';
 
 // get url parameter
-$KlantNr = $_GET['KlantNr'];
+$Username = $_GET['Username'];
 
 // get record
-$sql = "SELECT * FROM Klant WHERE KlantNr = ?";
+$sql = "SELECT * FROM `User` WHERE `Username` = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$KlantNr]);
+$stmt->execute([$Username]);
 checkSQL($stmt);
 
 $row = $stmt->fetch(PDO::FETCH_OBJ);
 
-function generateSelectOption() {
-    global $pdo;
-    $sql = 'SELECT `VerkNr`, `VerkNaam` FROM `Verkoper` ORDER BY `VerkNaam`';
-    $rs = $pdo->query($sql, PDO::FETCH_OBJ);
-    echo "<select name='VerkNr'>\n";
-    while ($row = $rs->fetch()) {
-        echo "<option value='{$row->VerkNr}'>{$row->VerkNaam}</option>\n";
-    }
-    echo '</select>';
-}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -34,36 +24,21 @@ function generateSelectOption() {
 
     <body>
 
-        <form method="post" action="customer-save.php">
+        <form method="post" action="user-save.php">
 
             <nav>
                 <a href="." title="home">home</a>
-                <a href="customer-list.php" title="back to list">back</a>
+                <a href="user-list.php" title="back to list">back</a>
                 <button title="save" type="submit">save</button>
                 <button title="reset" type="reset">reset</button>
             </nav>
 
 
-            <h1>Klant</h1>
-
-            <label>
-                Nummer
-                <input type="text" readonly name="KlantNr" value="<?= $row->KlantNr ?>">
-            </label>
+            <h1>Gebruiker</h1>
 
             <label>
                 Naam
-                <input type="text" name="KlantNaam" value="<?= $row->KlantNaam ?>">
-            </label>
-
-            <label>
-                Verkoper
-                <?php generateSelectOption(); ?>
-            </label>
-
-            <label>
-                Hoofdkantoor
-                <input type="text" name="PlaatsHfdkntr" value="<?= $row->PlaatsHfdkntr ?>">
+                <input type="text" name="Username" value="<?= $row->Username ?>">
             </label>
 
         </form>

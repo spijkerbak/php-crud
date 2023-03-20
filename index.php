@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -20,7 +24,8 @@ session_start();
         <p>CRUD example V2.1</p>
         <p>Get sources on <a target="github" href="http://github.com/spijkerbak/php-crud.git">Github</a>.
         <p><a href="../crud-simple/">Another example available</a></p>
-        <p><?= $_SESSION['username'] ?></p>
+        
+        <p><?= $_SESSION['username']??'' ?></p>
     </body>
 
 </html>

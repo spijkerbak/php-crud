@@ -17,5 +17,5 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$KlantNaam, $VerkNr, $PlaatsHfdkntr, $KlantNr]);
 checkSQL($stmt);
 
-// return to list
+// redirect to list
 header('location: customer-list.php');

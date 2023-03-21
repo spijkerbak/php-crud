@@ -1,4 +1,5 @@
 <?php
+
 require 'db.php';
 
 // get url parameter
@@ -10,5 +11,6 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$KlantNr]);
 checkSQL($stmt);
 
-// return to list
+// redirect to list
 header('location: customer-list.php');
+

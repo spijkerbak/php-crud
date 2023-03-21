@@ -1,0 +1,30 @@
+{
+	"uploadOnSave": true,
+	"autoDelete": true,
+	"checkGitignore": false,
+	"activeTargets": [
+		"spijkerman.nl"
+	],
+	"concurrency": 5,
+	"ignore": [
+		"**/.git/**/*",
+		".git/**/*",
+		".vscode/**/*",
+		"*.map",
+		"*.less",
+		"*.WinMerge"
+	],
+	"targets": [
+		{
+			"name": "spijkerman.nl",
+			"type": "ftp",
+			"host": "spijkerman.nl",
+			"port": 21,
+			"secure": true,
+			"user": "spijkerman",
+			"password": "Spijkerman-Spijkerman",
+			"transferDataType": "binary",
+			"dir": "/httpdocs/crud"
+		}
+	]
+}
